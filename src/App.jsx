@@ -1,7 +1,13 @@
-export default function App() {
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AppRouter from './Routes.jsx';
+
+function App() {
   return (
-    <div>
-      <h1>Sports Dashboard</h1>
-    </div>
-  )
+    <BrowserRouter>
+        <AppRouter />
+    </BrowserRouter>
+  );
 }
+
+export default App;
