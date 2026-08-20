@@ -1,0 +1,29 @@
+.footerContainer {
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 100px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Inter';
+    color: #111111;
+    margin-top: auto; 
+}
+
+.rightPart {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}

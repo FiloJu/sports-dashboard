@@ -1,0 +1,35 @@
+.cardContainer {
+    background-color: #0B23F4;
+    width: 278px;
+    height: 103px;
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.title {
+    font-size: 14px;
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+
+.valueWrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    color: #FFFFFF;
+}
+
+.value {
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+.unit {
+    font-size: 16px;
+    font-weight: 500;
+}

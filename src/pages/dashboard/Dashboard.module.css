@@ -1,0 +1,75 @@
+.errorMessage {
+    text-align: center;
+    margin-top: 100px;
+    color: red;
+    font-size: 24px;
+}
+
+.dashboardWrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent {
+    background-color: #F2F3FF;
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spacer {
+    height: 40px;
+}
+
+.dashboardGrid {
+    width: 1052px;
+}
+
+.sectionTitle {
+    font-size: 22px;
+    color: #111111;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.weekTitle {
+    font-size: 22px;
+    color: #111111;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+}
+
+.weekSubtitle {
+    color: #707070;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.chartsRowOne {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.chartsRowTwo {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+@media (max-width: 1240px) {
+    .dashboardGrid {
+        width: 95%;
+        max-width: 1024px; 
+        padding: 0 20px;
+    }
+    .chartsRowOne {
+        gap: 20px;
+        justify-content: center;
+    }
+}
