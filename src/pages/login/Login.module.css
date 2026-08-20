@@ -1,0 +1,137 @@
+.loginWrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #F2F3FF;
+}
+
+.leftColumn {
+    flex: 1;
+    padding-top: 55px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    height: 23.41px;
+    margin-right: 260px;
+}
+
+.formContainer {
+    margin-top: 151px;
+    width: 398px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.mainTitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: #0B23F4;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginLabelTitle {
+    font-size: 22px;
+    font-weight: 500;
+    color: #111111;
+    margin-bottom: 24px;
+}
+
+.inputLabel {
+    font-size: 14px;
+    font-weight: 400;
+    color: #707070;
+    margin-bottom: 8px;
+}
+
+.emailInput {
+    height: 58px;
+    border-radius: 10px;
+    border: 1px solid #717171;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #707070;
+}
+
+.passwordInput {
+    height: 58px;
+    border-radius: 10px;
+    border: 1px solid #717171;
+}
+
+.submitButton {
+    margin-top: 40px;
+    height: 51px;
+    background-color: #0B23F4;
+    color: #E7E7E7;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.forgotPassword {
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111111;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.rightColumn {
+    position: relative; 
+    width: 808px;
+    height: 1024px;
+}
+
+.coverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.infoBubble {
+    position: absolute;
+    right: 24px;
+    bottom: 29px;
+    width: 288px;
+    height: 62px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    text-align: center;
+    color: #0B23F4;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.errorPassword {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+}
