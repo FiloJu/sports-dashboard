@@ -1,0 +1,79 @@
+
+.cardContainer {
+    background: linear-gradient(0deg, #F2F3FF 0%, #FFFFFF 100%);
+    width: 1052px;
+    height: 181px;
+    border-radius: 20px;
+    padding: 32px 52px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftPart {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.profilePic {
+    width: 104px;
+    height: 117px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.userName {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: #111111;
+}
+
+.memberDate {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #707070;
+}
+
+.rightPart {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.distanceLabel {
+    font-size: 14px;
+    font-weight: 400;
+    color: #707070;
+}
+
+.blueBox {
+    background-color: #0B23F4;
+    border-radius: 10px;
+    width: 183px;
+    height: 90px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    gap: 5px;                
+}
+
+.outlineIcon {
+    width: 34px;
+    height: 34px;
+}
+
+.distanceValue {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+}
