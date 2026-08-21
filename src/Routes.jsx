@@ -1,5 +1,4 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import App from './App.jsx'
 import Login from './pages/login/Login.jsx'
 import Dashboard from './pages/dashboard/Dashboard.jsx'
 import Profile from './pages/profile/Profile.jsx'

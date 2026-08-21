@@ -1,7 +1,7 @@
-import React from 'react';
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 import styles from './DistanceChart.module.css';
 
+// Custom tooltip for the distance bars: shows the week range and summed km
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -14,11 +14,17 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+// DistanceChart aggregates daily distance data into four weekly bars
+// Props:
+// - `data`: array of daily records with a `distance` property
 export default function DistanceChart({ data }) {
+  // avoid runtime errors when `data` is undefined
   const safeData = data || [];
 
+  // divide the data into 4 roughly equal chunks (weeks)
   const chunkSize = Math.ceil(safeData.length / 4) || 1;
 
+  // build chart data by summing distances for each chunk
   const formattedData = [
     {
       nomDeLaBarre: 'S1',
@@ -41,17 +47,20 @@ export default function DistanceChart({ data }) {
       date: '19 juin - 25 juin'
     }
   ];
+
   return (
     <div className={styles.chartWrapper}>
 
       <div className={styles.headerContainer}>
 
         <div className={styles.headerLeft}>
+          {/* Summary title and subtitle */}
           <h3 className={styles.averageTitle}>18km en moyenne</h3>
           <p className={styles.averageSubtitle}>Total des kilomètres 4 dernières semaines</p>
         </div>
 
         <div className={styles.dateNav}>
+          {/* Simple date navigation (UI only) */}
           <button className={styles.navButton}>{"<"}</button>
           <span className={styles.dateSpan}>28 mai - 25 juin</span>
           <button className={styles.navButton}>{">"}</button>
@@ -61,6 +70,7 @@ export default function DistanceChart({ data }) {
 
       <div className={styles.graphContainer}>
         <ResponsiveContainer width="100%" height="100%">
+          {/* Bar chart uses `formattedData` built above */}
           <BarChart data={formattedData} margin={{ top: 0, right: 45, left: -20, bottom: 0}}>
 
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -74,6 +84,7 @@ export default function DistanceChart({ data }) {
             />
             <Tooltip content={<CustomTooltip />} cursor={false} />
 
+            {/* Each bar represents the total kilometers for that weekly chunk */}
             <Bar dataKey="distanceEnKm" fill="#B6BDFC" radius={[30, 30, 30, 30]} barSize={15} />
 
           </BarChart>
@@ -81,6 +92,7 @@ export default function DistanceChart({ data }) {
       </div>
 
       <div className={styles.legendContainer}>
+        {/* Legend indicating the unit displayed by the bars */}
         <div className={styles.legendDot}></div>
         <span className={styles.legendText}>Km</span>
       </div>

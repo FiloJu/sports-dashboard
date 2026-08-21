@@ -1,4 +1,3 @@
-import React from 'react';
 import line from '../../assets/line.png';
 import styles from './ProfileInfo.module.css';
 

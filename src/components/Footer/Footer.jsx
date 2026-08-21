@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo2 from '../../assets/Logo2.svg';
 import styles from './Footer.module.css';
 

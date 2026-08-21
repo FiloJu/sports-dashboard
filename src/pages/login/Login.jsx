@@ -1,5 +1,5 @@
-//L'AUDITEUR
-import React, { useContext, useState } from 'react';
+// Login page: handles user authentication via API and updates AuthContext
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../utils/AuthContext.jsx';
 import styles from './Login.module.css';
@@ -9,6 +9,7 @@ import loginpicture from '../../assets/loginpicture.png';
 
 
 export default function Login() {
+    // Controlled inputs for username/password and a local error message
     const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const [erreurTexte, setErreurTexte] = useState("");
@@ -16,6 +17,7 @@ export default function Login() {
     const navigate = useNavigate();
     const { login } = useContext(AuthContext);
 
+    // Submit handler: POST credentials to API, call `login` on success
     const handleLogin = async (e) => {
         e.preventDefault();
         setErreurTexte("");
@@ -38,7 +40,9 @@ export default function Login() {
             } else {
                 setErreurTexte(data.message || "Identifiants incorrects !");
             }
-        } catch (err) {
+        } catch (error) {
+            // log the actual error for debugging and show a user-friendly message
+            console.error(error);
             setErreurTexte("Le serveur est éteint ou inaccessible !");
         }
     };

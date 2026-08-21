@@ -1,7 +1,7 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './NotFound.module.css'
 
+// Simple 404 page shown when no route matches
 export default function NotFound() {
   return (
         <div className={styles.errorMessage}>

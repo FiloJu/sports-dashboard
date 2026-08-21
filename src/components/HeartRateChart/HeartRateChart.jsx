@@ -1,7 +1,7 @@
-import React from 'react';
 import { ResponsiveContainer, ComposedChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar, Line } from 'recharts';
 import styles from './HeartRateChart.module.css';
 
+// Custom tooltip for heart rate chart: shows min, max and average for a day
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -16,9 +16,13 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+// HeartRateChart converts daily heart rate objects into a 7-day dataset
+// and renders a composed chart (bars for min/max and a line for average)
 export default function HeartRateChart({ data }) {
 
+  // Abbreviated weekday labels used on the X axis
   const jours = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+  // Ensure we only take up to 7 days and map to the shape used by Recharts
   const formattedData = data.slice(0, 7).map((jour, index) => {
     return {
       jour: jours[index],
@@ -33,11 +37,13 @@ export default function HeartRateChart({ data }) {
 
       <div className={styles.headerContainer}>
         <div className={styles.headerLeft}>
+          {/* Main average BPM display (static value in this UI) */}
           <h3 className={styles.bpmTitle}>163 BPM</h3>
           <p className={styles.bpmSubtitle}>Fréquence cardiaque moyenne</p>
         </div>
 
         <div className={styles.dateNav}>
+          {/* Date navigation controls (UI only) */}
           <button className={styles.navButton}>{"<"}</button>
           <span className={styles.dateSpan}>28 mai - 04 juin</span>
           <button className={styles.navButton}>{">"}</button>
@@ -46,6 +52,7 @@ export default function HeartRateChart({ data }) {
 
       <div className={styles.chartWrapper}>
         <ResponsiveContainer width="100%" height="100%">
+          {/* ComposedChart overlays bars for min/max and a line for average */}
           <ComposedChart data={formattedData} margin={{ top: 20, right: 0, left: -20, bottom: 0 }}>
 
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -56,9 +63,11 @@ export default function HeartRateChart({ data }) {
 
             <Tooltip content={<CustomTooltip />} cursor={false} />
 
+            {/* Bars for daily min and max */}
             <Bar dataKey="min" fill="#FCC1B6" radius={[30, 30, 30, 30]} barSize={14} />
             <Bar dataKey="max" fill="#F4320B" radius={[30, 30, 30, 30]} barSize={14} />
 
+            {/* Line for average BPM across the day */}
             <Line type="monotone" dataKey="average" stroke="#F2F3FF" strokeWidth={3} dot={{ r: 4, fill: '#0B23F4' }} />
 
           </ComposedChart>
@@ -66,6 +75,7 @@ export default function HeartRateChart({ data }) {
       </div>
 
       <div className={styles.legendContainer}>
+        {/* Legend explaining the chart elements */}
         <div className={styles.legendItem}>
           <div className={styles.dotMin}></div> Min
         </div>

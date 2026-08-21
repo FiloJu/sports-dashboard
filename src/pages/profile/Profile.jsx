@@ -1,4 +1,6 @@
-import React, { useContext } from 'react'; 
+// Profile page: fetches user profile and statistics, renders profile info
+// and stat cards using the fetched `data`.
+import { useContext } from 'react'; 
 import { AuthContext } from '../../utils/AuthContext'; 
 import { useFetch } from '../../utils/hooks';
 import Header from '../../components/Header/Header';
@@ -10,6 +12,7 @@ import styles from './Profile.module.css';
 export default function Profil() {
     const { token } = useContext(AuthContext);
 
+    // Fetch profile and statistics using the auth token
     const { data, error } = useFetch('http://localhost:8000/api/user-info', token);
 
     if (error || !data) return null;
@@ -17,6 +20,7 @@ export default function Profil() {
     const userInfos = data.profile;
     const stats = data.statistics; 
 
+    // Derive readable duration (hours/minutes) and other summary stats
     const heures = Math.floor(stats.totalDuration / 60);
     const minutesRestantes = stats.totalDuration % 60;
 

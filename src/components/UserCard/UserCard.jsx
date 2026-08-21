@@ -1,4 +1,3 @@
-import React from 'react';
 import OUTLINE from '../../assets/OUTLINE.png';
 import styles from './UserCard.module.css';
 
