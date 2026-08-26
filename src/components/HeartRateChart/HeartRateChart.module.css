@@ -36,11 +36,13 @@
   background-color: #FFFFFF;
   padding: 30px;
   border-radius: 15px;
-  width: 583px;
+  width: min(583px, 100%);
+  max-width: 100%;
   box-sizing: border-box;
   height: 484px;
   display: flex;
   flex-direction: column;
+  flex: 1 1 540px;
 }
 
 

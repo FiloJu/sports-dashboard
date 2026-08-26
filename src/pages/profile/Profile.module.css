@@ -23,20 +23,24 @@
 .contentLayout {
     display: flex;
     gap: 57px;
-    width: 1140px;
+    width: min(1140px, calc(100% - 32px));
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .leftColumn {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    flex: 1 1 440px;
+    max-width: 508px;
 }
 
 .photoBox {
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 40px;
-    width: 508px;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -65,7 +69,8 @@
 }
 
 .rightColumn {
-    width: 575px;
+    width: min(575px, 100%);
+    flex: 1 1 420px;
 }
 
 .statsTitle {
@@ -90,11 +95,27 @@
 
 @media (max-width: 1200px) {
     .contentLayout {
-        width: 95%;
+        width: min(100%, calc(100% - 32px));
         gap: 30px;
-        padding: 0 20px;
+        padding: 0;
     }
     .photoBox {
-        width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mainContent {
+        padding: 30px 16px;
+    }
+
+    .leftColumn,
+    .rightColumn {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .statsGrid {
+        justify-content: center;
     }
 }

@@ -25,7 +25,9 @@
 }
 
 .dashboardGrid {
-    width: 1052px;
+    width: min(1052px, 100%);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .sectionTitle {
@@ -54,22 +56,41 @@
     gap: 24px;
     flex-wrap: wrap;
     margin-bottom: 40px;
+    justify-content: center;
 }
 
 .chartsRowTwo {
     display: flex;
     gap: 30px;
     align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 @media (max-width: 1240px) {
     .dashboardGrid {
-        width: 95%;
-        max-width: 1024px; 
-        padding: 0 20px;
+        width: min(1024px, calc(100% - 32px));
+        max-width: 1024px;
+        padding: 0;
     }
     .chartsRowOne {
         gap: 20px;
         justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mainContent {
+        padding: 30px 16px;
+    }
+
+    .chartsRowOne,
+    .chartsRowTwo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chartsRowTwo {
+        gap: 20px;
     }
 }

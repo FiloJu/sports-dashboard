@@ -6,7 +6,7 @@
 }
 
 .headerInner {
-    width: 1140px;
+    width: min(1140px, calc(100% - 32px));
     background-color: #F2F3FF;
     display: flex;
     justify-content: space-between;
@@ -14,11 +14,13 @@
     padding: 20px 0;
     box-sizing: border-box;
     border-bottom: none;
+    gap: 20px;
 }
 
 .logoContainer {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .navigation {
@@ -30,9 +32,11 @@
     font-size: 14px;
     color: #111111;
     background-color: #FFFFFF;
-    width: 461px;
+    width: min(461px, 100%);
     height: 49px;
     border-radius: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .navLink {

@@ -1,7 +1,7 @@
 .cardContainer {
     background-color: #0B23F4;
-    width: 278px;
-    height: 103px;
+    width: min(278px, 100%);
+    min-height: 103px;
     border-radius: 10px;
     padding: 20px 25px;
     box-sizing: border-box;
@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 12px;
+    flex: 1 1 220px;
 }
 
 .title {
