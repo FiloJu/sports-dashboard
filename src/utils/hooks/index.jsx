@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import USER_MOCK_DATA from '../../data.json';
 
-const IS_MOCKED = true;
+const IS_MOCKED = false; // Set to true to use mock data, false to fetch from API
 
 
 export function useFetch(url, token = null) {
