@@ -25,9 +25,9 @@
 
 .navigation {
     display: flex;
-    gap: 40px;
-    padding-left: 48px;
     align-items: center;
+    gap: 20px;
+    padding: 0 24px 0 36px;
     font-weight: 400;
     font-size: 14px;
     color: #111111;
@@ -35,20 +35,22 @@
     width: min(461px, 100%);
     height: 49px;
     border-radius: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
 }
 
 .navLink {
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .separator {
     width: 1.5px;
     height: 17px;
     background-color: #0B23F4;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0;
+    flex-shrink: 0;
 }
 
 .logoutLink {
@@ -56,4 +58,5 @@
     color: #0B23F4;
     font-weight: 400;
     font-size: 14px;
+    white-space: nowrap;
 }
